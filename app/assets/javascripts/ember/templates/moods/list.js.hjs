@@ -1,0 +1,10 @@
+{{currentDate}}
+<div class="commands">
+  <div class="new mood_link" {{action "showNew"}}>
+    <p>What's your mood today?</p>
+    <span class="last_mood">{{lastUpdate}}</span>
+  </div>
+</div>
+{{#if isNewVisible}}
+<div class="page overlay mood">{{view WeightTracker.NewMoodView }}</div>
+{{/if}}

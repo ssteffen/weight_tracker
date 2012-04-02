@@ -1,0 +1,10 @@
+<h3>What's your Mood?</h3>
+{{#with mood}}
+  <div class="feedback">&nbsp;<img {{bindAttr src="categorizeMood"}} height="200" width="200" />&nbsp;</div>
+  <div id="moodSlider" {{action "loadSlider" on="ready"}}></div>
+  <div id="moodLabel"><span class="left">Bad</span><span class="right">Good</span></div>
+  <button type="button" {{action "cancelForm"}}>Cancel</button>
+  <button type="submit">
+    Create
+  </button>
+{{/with}}

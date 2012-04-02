@@ -1,0 +1,16 @@
+<td>{{weight.id}}</td>
+<td class="data">
+  {{#if isEditing}}
+    {{view WeightTracker.EditWeightView}}
+  {{else}}
+    {{weight.weight}}
+  {{/if}}
+</td>
+<td>
+  <div class="commands">
+    {{#unless isEditing}}
+      <a href="#" {{action "showEdit"}}>Edit</a>
+      <a href="#" {{action "destroyRecord"}}>Remove</a>
+    {{/unless}}
+  </div>
+</td>

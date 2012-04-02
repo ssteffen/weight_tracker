@@ -1,0 +1,19 @@
+<h2>Jiff</h2>
+
+<script type="text/x-handlebars">
+  <canvas id="graphCanvas" width="800" heigh="600" />
+  <br />
+  <div id="current_date"></div>
+  {{view WeightTracker.ListMoodsView}}
+  {{view WeightTracker.ListWeightsView}}
+</script>
+
+<script type="text/javascript">
+  WeightTracker.weightsController.loadAll(<%= @weights.to_json.html_safe %>);
+  WeightTracker.moodsController.loadAll(<%= @moods.to_json.html_safe %>);
+</script>
+
+
+<div class="footer">
+  <p>Ember.js Teaching Time Trial!</p>
+</div>

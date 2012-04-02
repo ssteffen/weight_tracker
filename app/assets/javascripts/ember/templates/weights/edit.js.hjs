@@ -1,0 +1,9 @@
+<h3>What's your Weight?</h3>
+{{#with weight}}
+  <div class="feedback">&nbsp;{{weight}} lb</div>
+  {{view Ember.TextField valueBinding="weight" attributeBindings="name" name="weight_field" placeholder="weight in lbs"}}
+  <button type="button" {{action "cancelForm"}}>Cancel</button>
+  <button type="submit">
+    Create
+  </button>
+{{/with}}

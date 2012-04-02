@@ -1,0 +1,9 @@
+<div class="commands">
+  <div class="new weight_link" {{action "showNew"}}>
+    <p>What's your weight today?</p>
+    <span class="last_weight">{{lastUpdate}}</span>
+  </div>
+</div>
+{{#if isNewVisible}}
+<div class="page overlay weight">{{view WeightTracker.NewWeightView }}</div>
+{{/if}}

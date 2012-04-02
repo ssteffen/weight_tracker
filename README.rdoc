@@ -1,0 +1,25 @@
+Ember.js Learning Time Trial
+by: Steven Steffen
+
+This app is a little simple weight tracker meant to track a persons's change in mood with change in weight.
+This was meant as a coding test for Jiff, and encompassess about 24-28 hours of work.
+When this project was started, no previous knowledge of emberjs or html5 canvas graphing was known.
+The optional portions of the ios spinner and external api metrics, though attempted, were eventually removed.
+
+IOS Spinner: I was working on this for about 6 hours. I managed to get a spinner functioning, but couldn't get
+it integrated with the emberjs view data. Eventually scrapped it to rewrite some of the integration code.
+
+Tests: They are all in cucumber/capyara running a chrome browser. Because of this, to run the tests you will
+       need the chrome webdriver found here: http://code.google.com/p/chromedriver/downloads/list.
+
+       Optional: If you prefer, you may remove the following lines from features/support/env.rb
+
+          Capybara.register_driver :selenium do |app|
+            Capybara::Selenium::Driver.new(app, :browser => :chrome)
+          end
+
+       This will force remove the chrome dependency from the features
+
+Setup:
+
+To get the app running, clone this repo with git clone 
