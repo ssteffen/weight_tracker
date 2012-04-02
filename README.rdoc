@@ -9,17 +9,42 @@ The optional portions of the ios spinner and external api metrics, though attemp
 IOS Spinner: I was working on this for about 6 hours. I managed to get a spinner functioning, but couldn't get
 it integrated with the emberjs view data. Eventually scrapped it to rewrite some of the integration code.
 
-Tests: They are all in cucumber/capyara running a chrome browser. Because of this, to run the tests you will
-       need the chrome webdriver found here: http://code.google.com/p/chromedriver/downloads/list.
-
-       Optional: If you prefer, you may remove the following lines from features/support/env.rb
+Tests: They are all in cucumber/capyara running a chrome browser. Because of this, to run the tests you will need the chrome webdriver found here: http://code.google.com/p/chromedriver/downloads/list.
+Optional: If you prefer, you may remove the following lines from features/support/env.rb
 
           Capybara.register_driver :selenium do |app|
             Capybara::Selenium::Driver.new(app, :browser => :chrome)
           end
 
-       This will force remove the chrome dependency from the features
+This will force remove the chrome dependency from the features
 
 Setup:
 
-To get the app running, clone this repo with git clone 
+To get the app running, clone this repo with:
+
+  git clone git@github.com:ssteffen/weight_tracker.git
+
+Then run the following basic startup commands:
+  bundle install
+  bundle exec rake db:create
+  bundle exec rake db:schema:load
+  RAILS_ENV=test bundle exec rake db:schema:load
+
+If you would like to start with some pre-built data, run: 
+  bundle exec rake db:seed
+
+To run the cucumber tests, run:
+  bundle exec cucumber -vb
+
+
+Functionality:
+
+When started, the app will ask the user for their weight, a simple text field bound to a display for lbs.
+When this is finished, (either by submitting or cancelling), the user will be asked to submit a mood.
+I had a little personal fun with this one by binding the mood value with rage faces, enjoy :)
+After mood is input, the main screen is shown. This has a line graph that plots the data.
+If you started with no data in the app, then an orange and purple x will appear here, if you seeded with older data
+then there will be two lines, each coinciding by color to either weight or mood.
+From this page there are also buttons so the user can submit further weights and moods, as well as a display showing the previous update.
+
+Screenshots are located in public/screenshots
